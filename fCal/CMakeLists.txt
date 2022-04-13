@@ -116,6 +116,30 @@ target_include_directories(fCal PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/Toolboxes
   )
 
+IF(ATRACSYS_META_PATH)
+  LIST(APPEND ATRACSYS_INCLUDES
+    "${ATRACSYS_META_PATH}/soft.atr.calibration.unsafe/dev/include/client"
+    "${ATRACSYS_META_PATH}/soft.atr.framework/dev/include"
+    "${ATRACSYS_META_PATH}/soft.atr.2cams.utils.unsafe/dev/include"
+    "${ATRACSYS_META_PATH}/make/fTk/priv/x64/jsoncpp/RelWithDebInfo/install/include"
+    "${ATRACSYS_META_PATH}/soft.atr.file.signature.unsafe/dev/include"
+    )
+  LIST(APPEND ATRACSYS_LIBS
+    "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/calibrationClient64.lib"
+    "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/framework64.lib"
+    "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/ptUtils2cams64.lib"
+    "${ATRACSYS_META_PATH}/make/fTk/priv/x64/jsoncpp/RelWithDebInfo/install/lib/jsoncpp.lib"
+    "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/fileSignature64.lib"
+    )
+
+  target_include_directories(fCal PUBLIC 
+  ${ATRACSYS_INCLUDES}
+  )
+  TARGET_LINK_LIBRARIES(fCal PUBLIC
+  ${ATRACSYS_LIBS}
+  )
+ENDIF()
+
 IF(NOT (MSVC OR ${CMAKE_GENERATOR} MATCHES "Xcode"))
   target_compile_options(fCal PRIVATE -ftemplate-depth=5000)
 ENDIF()
