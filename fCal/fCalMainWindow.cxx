@@ -9,6 +9,9 @@ See License.txt for details.
 #include "QPlusChannelAction.h"
 #include "vtkPlusVisualizationController.h"
 
+// Atracsys CMM includes
+#include <DDConfigurationChecker.hpp>
+
 // Toolbox includes
 #include "QCapturingToolbox.h"
 #include "QConfigurationToolbox.h"
@@ -59,6 +62,8 @@ fCalMainWindow::fCalMainWindow(QWidget* parent, Qt::WindowFlags flags)
 
   this->Set3DManipulationMenuEnabled(false);
   this->SetImageManipulationMenuEnabled(false);
+  
+  measurement::DDConfigurationChecker checker("", nullptr, 0ull);
 }
 
 //-----------------------------------------------------------------------------
