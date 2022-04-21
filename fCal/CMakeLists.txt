@@ -121,20 +121,21 @@ IF(ATRACSYS_META_PATH)
     "${ATRACSYS_META_PATH}/soft.atr.calibration.unsafe/dev/include/client"
     "${ATRACSYS_META_PATH}/soft.atr.framework/dev/include"
     "${ATRACSYS_META_PATH}/soft.atr.2cams.utils.unsafe/dev/include"
-    "${ATRACSYS_META_PATH}/make/fTk/priv/x64/jsoncpp/RelWithDebInfo/install/include"
+    optimized "${ATRACSYS_META_PATH}/make/fTk/priv/cl16.11/x64/jsoncpp/RelWithDebInfo/install/include"
+    debug "${ATRACSYS_META_PATH}/make/fTk/priv/cl16.11/x64/jsoncpp/Debug/install/include"
     "${ATRACSYS_META_PATH}/soft.atr.file.signature.unsafe/dev/include"
     )
   LIST(APPEND ATRACSYS_LIBS
-    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/calibrationClient64.lib"
-    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/framework64.lib"
-    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/ptUtils2cams64.lib"
-    optimized "${ATRACSYS_META_PATH}/make/fTk/priv/x64/jsoncpp/RelWithDebInfo/install/lib/jsoncpp.lib"
-    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/RelWithDebInfo/fileSignature64.lib"
-	debug "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/Debug/calibrationClient64.lib"
-    debug "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/Debug/framework64.lib"
-    debug "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/Debug/ptUtils2cams64.lib"
-    debug "${ATRACSYS_META_PATH}/make/fTk/priv/x64/jsoncpp/Debug/install/lib/jsoncpp.lib"
-    debug "${ATRACSYS_META_PATH}/bin/fTk/priv/x64/Debug/fileSignature64.lib"
+    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/RelWithDebInfo/calibrationClient64.lib"
+    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/RelWithDebInfo/framework64.lib"
+    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/RelWithDebInfo/ptUtils2cams64.lib"
+    optimized "${ATRACSYS_META_PATH}/make/fTk/priv/cl16.11/x64/jsoncpp/RelWithDebInfo/install/lib/jsoncpp.lib"
+    optimized "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/RelWithDebInfo/fileSignature64.lib"
+	debug "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/Debug/calibrationClient64.lib"
+    debug "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/Debug/framework64.lib"
+    debug "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/Debug/ptUtils2cams64.lib"
+    debug "${ATRACSYS_META_PATH}/make/fTk/priv/cl16.11/x64/jsoncpp/Debug/install/lib/jsoncpp.lib"
+    debug "${ATRACSYS_META_PATH}/bin/fTk/priv/cl16.11/x64/Debug/fileSignature64.lib"
     )
 
   target_include_directories(fCal PUBLIC 
