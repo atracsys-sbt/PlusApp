@@ -4,7 +4,7 @@
 ${CMAKE_COMMAND} --build . --config Release
 
 # Build documentation
-if [ "${BUILD_DOCUMENTATION}" == "ON"]; then
+if [ "${BUILD_DOCUMENTATION}" == "ON" ]; then
   ./CreateUserManual.sh
   echo User manual generation DONE
 fi
